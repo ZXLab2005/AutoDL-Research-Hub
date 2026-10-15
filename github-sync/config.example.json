@@ -1,0 +1,8 @@
+{
+  "repository": "YOUR_ACCOUNT/AutoDL-Research-Hub",
+  "branch": "main",
+  "gitExe": "app/git/cmd/git.exe",
+  "ghExe": "app/gh/bin/gh.exe",
+  "proxyUrl": "http://127.0.0.1:7897",
+  "pushTimeoutSeconds": 600
+}

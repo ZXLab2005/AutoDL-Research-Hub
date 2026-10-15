@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "platform": "windows-x64",
+  "verifiedAt": "2026-10-15",
+  "dependencies": [
+    {
+      "id": "node", "name": "Node.js", "version": "24.21.0",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-x64.zip",
+      "sha256": "158f7685b44de51f6c0df1d153526cbcd3e1bc739a8dfc607721cef75de9e541",
+      "checksumSource": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+      "directory": "app/node", "archiveRoot": "node-v24.21.0-win-x64", "requiredFiles": ["node.exe"]
+    },
+    {
+      "id": "vscode", "name": "Visual Studio Code", "version": "1.141.2",
+      "url": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/16507d91be0dc1ce4f94c04d4d0430210b8685d9/VSCode-win32-x64-1.141.2.zip",
+      "sha256": "a90bd5ee5609ef2bf249ec0ee0d287b0fadc97269c8ebc51c9b2b32ecb292d18",
+      "checksumSource": "https://update.code.visualstudio.com/api/update/win32-x64-archive/stable/latest",
+      "directory": "app/vscode", "archiveRoot": "", "requiredFiles": ["Code.exe", "bin/code.cmd"]
+    },
+    {
+      "id": "git", "name": "MinGit", "version": "2.56.0.2",
+      "url": "https://github.com/git-for-windows/git/releases/download/v2.56.0.windows.2/MinGit-2.56.0.2-64-bit.zip",
+      "sha256": "da35e72aa21c005a5a0d298cfbae110bc1609a815730ea0dde84b01a1b3cd3be",
+      "checksumSource": "https://api.github.com/repos/git-for-windows/git/releases/tags/v2.56.0.windows.2",
+      "directory": "app/git", "archiveRoot": "", "requiredFiles": ["cmd/git.exe"]
+    },
+    {
+      "id": "gh", "name": "GitHub CLI", "version": "2.102.0",
+      "url": "https://github.com/cli/cli/releases/download/v2.102.0/gh_2.102.0_windows_amd64.zip",
+      "sha256": "ae64e556ecc240b200f7eba60d550e4bb60d78e860e69dd88c449405b86067f4",
+      "checksumSource": "https://api.github.com/repos/cli/cli/releases/tags/v2.102.0",
+      "directory": "app/gh", "archiveRoot": "", "requiredFiles": ["bin/gh.exe"]
+    },
+    {
+      "id": "openssh", "name": "OpenSSH client", "version": "10.0.0.0p2-Preview",
+      "url": "https://github.com/PowerShell/Win32-OpenSSH/releases/download/10.0.0.0p2-Preview/OpenSSH-Win64.zip",
+      "sha256": "23f50f3458c4c5d0b12217c6a5ddfde0137210a30fa870e98b29827f7b43aba5",
+      "checksumSource": "https://api.github.com/repos/PowerShell/Win32-OpenSSH/releases/tags/10.0.0.0p2-Preview",
+      "directory": "app/openssh", "archiveRoot": "OpenSSH-Win64", "requiredFiles": ["ssh.exe", "ssh-keygen.exe", "scp.exe"],
+      "optionalWhenSystemSshExists": true
+    }
+  ]
+}

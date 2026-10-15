@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "Codex 控制台 · 本地工作区",
+      "path": "workspace"
+    }
+  ],
+  "settings": {
+    "chatgpt.openOnStartup": false,
+    "workbench.editor.restoreEditors": false,
+    "workbench.editor.restoreViewState": false,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.hideOnStartup": "always"
+  }
+}

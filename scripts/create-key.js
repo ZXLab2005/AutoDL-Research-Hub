@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs');const path=require('node:path');const {execFileSync}=require('node:child_process');const core=require('../src/core');
+const root=core.assertEPath(path.resolve(__dirname,'..'));
+const key=core.assertEPath(path.join(root,'data','ssh','id_ed25519'));
+fs.mkdirSync(path.dirname(key),{recursive:true});
+const keygen=path.join(process.env.SystemRoot,'System32','OpenSSH','ssh-keygen.exe');
+if(!fs.existsSync(key)) execFileSync(keygen,['-t','ed25519','-N','','-C','autodl-research-hub','-f',key],{stdio:'pipe',windowsHide:true});
+const user=execFileSync('whoami.exe',[],{encoding:'utf8',windowsHide:true}).trim();
+execFileSync('icacls.exe',[key,'/inheritance:r','/grant:r',user+':(F)'],{stdio:'pipe',windowsHide:true});
+if(!fs.existsSync(key+'.pub')) fs.writeFileSync(key+'.pub',execFileSync(keygen,['-y','-f',key],{encoding:'utf8',windowsHide:true}));
+core.saveConfig(root,{...core.readConfig(root),identityFile:key});
+console.log('Public key: '+key+'.pub');
+console.log(execFileSync(keygen,['-l','-f',key+'.pub'],{encoding:'utf8',windowsHide:true}).trim());

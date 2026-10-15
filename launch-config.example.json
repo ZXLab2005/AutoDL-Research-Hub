@@ -1,0 +1,7 @@
+{
+  "layoutVersion": 2,
+  "codeExe": "app/vscode/Code.exe",
+  "nodeExe": "app/node/node.exe",
+  "gitExe": "app/git/cmd/git.exe",
+  "ghExe": "app/gh/bin/gh.exe"
+}

@@ -1,0 +1,35 @@
+{
+  "environment": "retriever",
+  "python": "3.10.22",
+  "executable": "/root/autodl-tmp/research-hub/envs/retriever/bin/python",
+  "torch": "2.4.0+cu121",
+  "cuda_available": false,
+  "cpu_matmul": {
+    "shape": [
+      8,
+      8
+    ],
+    "trace": 55.01833724975586
+  },
+  "scope": "dependency and CPU kernel checks only",
+  "packages": {
+    "transformers": "4.46.3",
+    "datasets": "2.21.0",
+    "accelerate": "1.1.1",
+    "faiss": "1.8.0",
+    "fastapi": "0.115.6",
+    "uvicorn": "0.32.1"
+  },
+  "installed_versions": {
+    "torch": "2.4.0",
+    "transformers": "4.46.3",
+    "datasets": "2.21.0",
+    "numpy": "1.26.4",
+    "accelerate": "1.1.1",
+    "faiss-cpu": "1.8.0.post1",
+    "fastapi": "0.115.6",
+    "uvicorn": "0.32.1"
+  },
+  "faiss_exact_search": "passed",
+  "status": "CPU_CHECKS_PASSED"
+}

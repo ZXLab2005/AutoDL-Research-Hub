@@ -1,0 +1,15 @@
+'use strict';
+const path = require('node:path');
+const fs = require('node:fs');
+const core = require('../src/core');
+const root = core.assertEPath(path.resolve(__dirname, '..'));
+const command = process.argv[2];
+if (!command) throw Error('Provide the SSH login command as one quoted argument.');
+const previous = core.readConfig(root);
+const imported = core.parseSshCommand(command);
+if (!imported.identityFile) delete imported.identityFile;
+const config = core.saveConfig(root, { ...previous, ...imported });
+const settings = path.join(core.getPaths(root).userData, 'User', 'settings.json');
+const old = JSON.parse(fs.readFileSync(settings, 'utf8'));
+fs.writeFileSync(settings, JSON.stringify({ ...old, ...core.buildSettings(root, config) }, null, 2) + '\n');
+console.log('Saved SSH endpoint: '+config.user+'@'+config.host+':'+config.port+'; existing portable key retained.');
